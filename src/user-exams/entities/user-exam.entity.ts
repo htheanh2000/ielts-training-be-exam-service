@@ -1,7 +1,7 @@
 // src/entities/user-exam.entity.ts
 
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
-import { Exam } from '../../../entities/exam.entity';
+import { Exam } from '../../entities/exam.entity';
 
 @Entity()
 export class UserExam {

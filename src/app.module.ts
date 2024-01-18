@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { HealthModule } from './health/health.module';
-import { ExamsModule } from './exams/exams.module';
+import { UserExamsModule } from './user-exams/user-exams.module';
 const dotenv = require('dotenv');
 dotenv.config();
 @Module({
@@ -17,7 +17,7 @@ dotenv.config();
       synchronize: true,
     }),
     HealthModule,
-    ExamsModule
+    UserExamsModule
     // ... other modules
   ],
   // ... controllers, providers
