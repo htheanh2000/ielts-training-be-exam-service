@@ -1,7 +1,7 @@
 // src/entities/exam.entity.ts
 
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
-import { UserExam } from './user-exam.entity';
+import { UserExam } from '../user-exams/entities/user-exam.entity';
 import { Question } from './question.entity';
 
 @Entity()

@@ -2,6 +2,11 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { HealthModule } from './health/health.module';
 import { UserExamsModule } from './user-exams/user-exams.module';
+import { UserExam } from './user-exams/entities/user-exam.entity';
+import { Exam } from './entities/exam.entity';
+import { Option } from './entities/option.entity';
+import { Question } from './entities/question.entity';
+import { UserAnswer } from './entities/user-answer.entity';
 const dotenv = require('dotenv');
 dotenv.config();
 @Module({
@@ -13,8 +18,9 @@ dotenv.config();
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      entities: [],
+      entities: [UserExam, Exam, Option, Question, UserAnswer],
       synchronize: true,
+      autoLoadEntities: true,
     }),
     HealthModule,
     UserExamsModule

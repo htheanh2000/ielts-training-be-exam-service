@@ -1,6 +1,6 @@
 // src/entities/user-exam.entity.ts
 
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, IsNull } from 'typeorm';
 import { Exam } from '../../entities/exam.entity';
 
 @Entity()
@@ -16,13 +16,13 @@ export class UserExam {
   @JoinColumn({ name: 'examId' })
   exam: Exam;
 
-  @Column()
+  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   dateTaken: Date;
 
-  @Column()
+  @Column({nullable: true, default: 0})
   score: number;
 
-  @Column()
+  @Column({nullable: true, default: 0})
   result: boolean;
 
   // ... other columns as needed

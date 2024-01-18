@@ -1,7 +1,7 @@
 // src/entities/user-answer.entity.ts
 
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
-import { UserExam } from './user-exam.entity';
+import { UserExam } from '../user-exams/entities/user-exam.entity';
 import { Question } from './question.entity';
 import { Option } from './option.entity';
 
