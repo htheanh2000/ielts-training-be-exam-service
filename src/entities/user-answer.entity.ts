@@ -2,8 +2,8 @@
 
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
 import { UserExam } from '../user-exams/entities/user-exam.entity';
-import { Question } from './question.entity';
-import { Option } from './option.entity';
+import { Question } from '../question/entities/question.entity';
+import { Option } from '../question/entities/option.entity';
 
 @Entity()
 export class UserAnswer {

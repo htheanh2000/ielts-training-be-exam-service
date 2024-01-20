@@ -4,9 +4,10 @@ import { HealthModule } from './health/health.module';
 import { UserExamsModule } from './user-exams/user-exams.module';
 import { UserExam } from './user-exams/entities/user-exam.entity';
 import { Exam } from './entities/exam.entity';
-import { Option } from './entities/option.entity';
-import { Question } from './entities/question.entity';
+import { Option } from './question/entities/option.entity';
+import { Question } from './question/entities/question.entity';
 import { UserAnswer } from './entities/user-answer.entity';
+import { QuestionModule } from './question/question.module';
 const dotenv = require('dotenv');
 dotenv.config();
 @Module({
@@ -23,7 +24,8 @@ dotenv.config();
       autoLoadEntities: true,
     }),
     HealthModule,
-    UserExamsModule
+    UserExamsModule,
+    QuestionModule
     // ... other modules
   ],
   // ... controllers, providers

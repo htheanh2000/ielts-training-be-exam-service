@@ -5,8 +5,8 @@ import { Question } from './question.entity';
 
 @Entity()
 export class Option {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @ManyToOne(() => Question, question => question.options)
   question: Question;
