@@ -8,6 +8,7 @@ import { Option } from './question/entities/option.entity';
 import { Question } from './question/entities/question.entity';
 import { UserAnswer } from './entities/user-answer.entity';
 import { QuestionModule } from './question/question.module';
+import { FileUploadModule } from './upload/module/file-update.module';
 const dotenv = require('dotenv');
 dotenv.config();
 @Module({
@@ -25,7 +26,8 @@ dotenv.config();
     }),
     HealthModule,
     UserExamsModule,
-    QuestionModule
+    QuestionModule,
+    FileUploadModule
     // ... other modules
   ],
   // ... controllers, providers
